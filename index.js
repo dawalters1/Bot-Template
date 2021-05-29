@@ -13,7 +13,7 @@ bot.on.ready(async () => {
 });
 
 bot.commandHandler.register([
-  new WOLF.Command(`${keyword}_command_${keyword}`, { group: (command) => await bot.messaging().sendGroupMessage(command.targetGroupId, bot.phrase().getByLanguageAndName(command.language, `${bot.config.keyword}_help_message`)) },
+  new WOLF.Command(`${keyword}_command_${keyword}`, { group: async (command) => await bot.messaging().sendGroupMessage(command.targetGroupId, bot.phrase().getByLanguageAndName(command.language, `${bot.config.keyword}_help_message`)) },
     [
       new WOLF.Command(`${keyword}_command_help`, { group: (command) => help(bot, command) }),
       new WOLF.Command(`${keyword}_command_example`, { group: (command) => example(bot, command) }),
