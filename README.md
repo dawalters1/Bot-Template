@@ -1,7 +1,7 @@
-# bot-{keyword}
+# bot-{botname_lowercase}
 
 Getting Started
 
-- Replace {keyword} with The first word of your bots name -> EX: tag, dua, manager, notes
-- Replace {botname} with the first word of your bots name ALL lowercase.
+- Replace {botname_lowercase} with The first word of your bots name  (ALL lowercase) -> EX: tag, dua, manager, notes
+- Replace {BotName} with the first word of your bots name CapitalCase
 - Replace {developer} with your name.

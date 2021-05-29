@@ -1,4 +1,4 @@
-keyword: 'your_bots_name' # single word only. EX: tag, battlestars, manager, dua, notes
+keyword: '{botname_lowercase}' # single word only. EX: tag, battlestars, manager, dua, notes
 app:
   commandSettings:
     ignoreOfficialBots: true

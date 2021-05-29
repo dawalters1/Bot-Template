@@ -1,31 +1,31 @@
 [
     {
-        "name": "{keyword}_command_{keyword}",
+        "name": "{botname_lowercase}_command_{botname_lowercase}",
         "value":"!{botname}",
         "language": "en"
     },
     {
-        "name": "{keyword}_command_help",
+        "name": "{botname_lowercase}_command_help",
         "value":"help",
         "language": "en"
     },
     {
-        "name": "{botname}_help_message",
-        "value":"Welcome to the {botname} bot\n\n!{botname} help - To display this message\n!{botname} example - To view the example command",
+        "name": "{botname_lowercase}_help_message",
+        "value":"Welcome to the {BotName} bot\n\n!{botname_lowercase} help - To display this message\n!{botname_lowercase} example - To view the example command",
         "language": "en"
     },
     {
-        "name": "{botname}_command_example",
+        "name": "{botname_lowercase}_command_example",
         "value":"example",
         "language": "en"
     },
     {
-        "name": "{botname}_example_message",
+        "name": "{botname_lowercase}_example_message",
         "value":"This is an example message\n\n{nickname} ({subscriberId})",
         "language": "en"
     },
     {
-        "name": "{botname}_error_privilege_mod+",
+        "name": "{botname_lowercase}_error_privilege_mod+",
         "value":"(N) {nickname} ({subscriberId}), you must be at least mod to use this command",
         "language": "en"
     }
