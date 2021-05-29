@@ -1,0 +1,14 @@
+keyword: 'your_bots_name' # single word only. EX: tag, battlestars, manager, dua, notes
+app:
+  commandSettings:
+    ignoreOfficialBots: true
+  loginSettings:
+    email: ''
+    password: ''
+    loginDevice: 'android' # android, iphone, web
+    loginType: 'email' # email, google, facebook, snapchat, twitter, apple
+    onlineState: 1 # 1 - online, 2 - Away, 3 - Invisible, 5 - Busy 
+
+redis:
+  host: localhost
+  port: 6379

@@ -1,0 +1,17 @@
+{
+  "name": "bot-{botname}",
+  "version": "1.0.0",
+  "description": "Bot {botname}",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "index.js"
+  },
+  "author": "{developer}",
+  "license": "ISC",
+  "dependencies": {
+    "@dawalters1/wolf.js": "0.0.4",
+    "@dawalters1/constants": "1.0.0",
+    "config": "^3.3.6"
+  }
+}
