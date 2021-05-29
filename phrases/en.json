@@ -10,22 +10,22 @@
         "language": "en"
     },
     {
-        "name": "{keyword}_help_message",
+        "name": "{botname}_help_message",
         "value":"Welcome to the {botname} bot\n\n!{botname} help - To display this message\n!{botname} example - To view the example command",
         "language": "en"
     },
     {
-        "name": "{keyword}_command_example",
+        "name": "{botname}_command_example",
         "value":"example",
         "language": "en"
     },
     {
-        "name": "{keyword}_example_message",
+        "name": "{botname}_example_message",
         "value":"This is an example message\n\n{nickname} ({subscriberId})",
         "language": "en"
     },
     {
-        "name": "{keyword}_error_privilege_mod+",
+        "name": "{botname}_error_privilege_mod+",
         "value":"(N) {nickname} ({subscriberId}), you must be at least mod to use this command",
         "language": "en"
     }
