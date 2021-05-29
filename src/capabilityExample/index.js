@@ -2,7 +2,7 @@ const {capability} = require('@dawalters1/constants');
 
 module.exports = async (bot, command)=>{
     
-    if(!await bot.utility().groupMemberCapability().check(command.targetGroupId, command.sourceSubscriberId, capability.MOD)){
+    if(!await bot.utility().groupMember().checkPermissions(command.targetGroupId, command.sourceSubscriberId, capability.MOD)){
         return await bot.messaging().sendGroupMessage(command.targetGroupId, 
             bot.utility().replaceInString(bot.phrase().getByLanguageAndName(command.language, `${api.config.keyword}_error_privilege_mod`),
             {
