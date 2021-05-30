@@ -10,7 +10,7 @@
   "author": "{developer}",
   "license": "ISC",
   "dependencies": {
-    "@dawalters1/wolf.js": "0.0.9",
+    "@dawalters1/wolf.js": "0.0.14",
     "@dawalters1/constants": "1.0.0",
     "config": "^3.3.6"
   }
