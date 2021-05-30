@@ -1,7 +1,7 @@
 [
     {
         "name": "{botname_lowercase}_command_{botname_lowercase}",
-        "value":"!{botname}",
+        "value":"!{botname_lowercase}",
         "language": "en"
     },
     {
