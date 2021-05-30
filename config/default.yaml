@@ -1,5 +1,6 @@
 keyword: '{botname_lowercase}' # single word only. EX: tag, battlestars, manager, dua, notes
 app:
+  defaultLanguage: 'en'
   commandSettings:
     ignoreOfficialBots: true
   loginSettings:
