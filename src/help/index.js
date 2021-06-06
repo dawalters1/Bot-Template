@@ -1,5 +1,5 @@
 
-module.exports = async (bot, command)=>
+module.exports = async (api, command)=>
 { 
-    await bot.messaging().sendGroupMessage(command.targetGroupId, bot.phrase().getByLanguageAndName(command.language, `${bot.config.keyword}_help_message`));
+    await api.messaging().sendGroupMessage(command.targetGroupId, api.phrase().getByLanguageAndName(command.language, `${api.config.keyword}_help_message`));
 }
