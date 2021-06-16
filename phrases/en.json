@@ -4,6 +4,8 @@
         "value":"!{botname_lowercase}",
         "language": "en"
     },
+
+
     {
         "name": "{botname_lowercase}_command_help",
         "value":"help",
@@ -14,6 +16,8 @@
         "value":"Welcome to the {BotName} bot\n\n!{botname_lowercase} help - To display this message\n!{botname_lowercase} example - To view the example command",
         "language": "en"
     },
+
+
     {
         "name": "{botname_lowercase}_command_example",
         "value":"example",
@@ -24,9 +28,70 @@
         "value":"This is an example message\n\n{nickname} ({subscriberId})",
         "language": "en"
     },
+
+
     {
-        "name": "{botname_lowercase}_error_privilege_mod+",
+        "name": "{botname_lowercase}_command_capability",
+        "value":"capability",
+        "language": "en"
+    },
+    {
+        "name": "{botname_lowercase}_error_capability_mod+",
         "value":"(N) {nickname} ({subscriberId}), you must be at least mod to use this command",
+        "language": "en"
+    },
+    {
+        "name": "{botname_lowercase}_group_capability_message+",
+        "value":"(Y) {nickname} ({subscriberId}), you are at least mod",
+        "language": "en"
+    },
+
+
+    {
+        "name":"{botname_lowercase}_command_argument",
+        "value": "arguments",
+        "language":"en"
+    },
+    {
+        "name": "{botname_lowercase}_get_arguments_error_provide_arguments_message",
+        "value":"(N) {nickname} ({subscriberId}), you must provide at least 1 argument for this command",
+        "language": "en"
+    },
+    {
+        "name": "{botname_lowercase}_argument_message",
+        "value":"Argument Count: {argCount}\nArguments: {args}",
+        "language": "en"
+    },
+
+    
+    {
+        "name":"{botname_lowercase}_command_privilege",
+        "value": "privilege",
+        "language":"en"
+    },
+    {
+        "name": "{botname_lowercase}_has_privilege_staff_message",
+        "value":"{nickname} ({subscriberId}), you are staff",
+        "language": "en"
+    },
+    {
+        "name": "{botname_lowercase}_has_privilege_alpha_tester_message",
+        "value":"{nickname} ({subscriberId}), you are a client tester!",
+        "language": "en"
+    },
+    {
+        "name": "{botname_lowercase}_has_privilege_bot_tester_message",
+        "value":"{nickname} ({subscriberId}), you are a bot tester!",
+        "language": "en"
+    },
+    {
+        "name": "{botname_lowercase}_has_privilege_content_submitter_message",
+        "value":"{nickname} ({subscriberId}), you are a content submitter!",
+        "language": "en"
+    },
+    {
+        "name": "{botname_lowercase}_has_privilege_volunteer_message",
+        "value":"{nickname} ({subscriberId}), you are a volunteer!",
         "language": "en"
     }
 ]
