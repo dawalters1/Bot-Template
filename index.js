@@ -21,4 +21,4 @@ bot.commandHandler.register([
 
 bot.on.ready(async () =>  console.log('ready'));
 
-bot.login();
+bot.login('email', 'password');
