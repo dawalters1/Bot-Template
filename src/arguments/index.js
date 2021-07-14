@@ -1,5 +1,5 @@
 
-module.exports = async (api, command)=>{
+module.exports = async (api, command) => {
     
     if(!command.argument){
         return await bot.messaging().sendGroupMessage(command.targetGroupId, 

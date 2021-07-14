@@ -2,7 +2,7 @@ const {capability, privilege} = require('@dawalters1/constants');
 
 const multiplePrivileges = [privilege.ALPHA_TESTER, privilege.BOT_TESTER, privilege.CONTENT_SUBMITTER,  privilege.VOLUNTEER];
 
-module.exports = async (api, command)=>{
+module.exports = async (api, command) => {
     const subscriber = await api.subscriber().getById(command.sourceSubscriberId);
     
     //#region  Check if user has single privilege

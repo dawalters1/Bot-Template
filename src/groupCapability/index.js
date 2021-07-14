@@ -1,6 +1,6 @@
 const {capability} = require('@dawalters1/constants');
 
-module.exports = async (api, command)=>{
+module.exports = async (api, command) => {
     
     if(!await api.utility().groupMember().checkPermissions(command.targetGroupId, command.sourceSubscriberId, capability.MOD)){
         return await api.messaging().sendGroupMessage(command.targetGroupId, 
