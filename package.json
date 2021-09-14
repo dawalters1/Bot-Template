@@ -11,7 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "@dawalters1/constants": "1.0.1",
-    "@dawalters1/wolf.js": "0.9.0",
+    "@dawalters1/wolf.js": "0.10.3",
     "config": "^3.3.6"
   }
 }
