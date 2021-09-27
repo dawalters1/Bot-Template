@@ -5,13 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "nodemon index.js"
   },
   "author": "{developer}",
   "license": "ISC",
   "dependencies": {
     "@dawalters1/constants": "1.0.1",
-    "@dawalters1/wolf.js": "0.10.3",
+    "@dawalters1/wolf.js": "0.11.0",
     "config": "^3.3.6"
   }
 }

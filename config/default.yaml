@@ -3,6 +3,7 @@ app:
   defaultLanguage: 'en'
   commandSettings:
     ignoreOfficialBots: true
+    ignoreUnofficialBots: false
 
 redis:
   host: localhost
