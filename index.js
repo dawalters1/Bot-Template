@@ -9,7 +9,7 @@ const getArguments = require('./src/arguments');
 
 const keyword = api.config.keyword;
 
-api.commandHandler.register([
+api.commandHandler().register([
   new WOLF.Command(`${keyword}_command_${keyword}`, { both:  (command) => help(api, command) },
     [
       new WOLF.Command(`${keyword}_command_help`, { both: (command) => help(api, command) }),
