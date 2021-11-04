@@ -1,7 +1,12 @@
-const {capability, privilege} = require('@dawalters1/constants');
+const {privilege} = require('@dawalters1/constants');
 
 const multiplePrivileges = [privilege.ALPHA_TESTER, privilege.BOT_TESTER, privilege.CONTENT_SUBMITTER,  privilege.VOLUNTEER];
 
+/**
+ * Required for intellisense to work with api & command
+ * @param {import('@dawalters1/wolf.js').WOLFBot} api
+ * @param {import('@dawalters1/wolf.js').CommandObject} command
+ */
 module.exports = async (api, command) => {
     const subscriber = await api.subscriber().getById(command.sourceSubscriberId);
     

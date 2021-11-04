@@ -1,5 +1,10 @@
 const {capability} = require('@dawalters1/constants');
 
+/**
+ * Required for intellisense to work with api & command
+ * @param {import('@dawalters1/wolf.js').WOLFBot} api
+ * @param {import('@dawalters1/wolf.js').CommandObject} command
+ */
 module.exports = async (api, command) => {
     
     if(!await api.utility().group().member().checkPermissions(command.targetGroupId, command.sourceSubscriberId, capability.MOD)){
