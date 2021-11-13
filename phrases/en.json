@@ -74,5 +74,18 @@
     {
         "name": "{botname_lowercase}_has_privilege_volunteer_message",
         "value":"{nickname} ({subscriberId}), you are a volunteer!"
+    },
+
+    {
+        "name":"{botname_lowercase}_command_hello",
+        "value":"hello"
+    },
+    {
+        "name":"{botname_lowercase}_group_and_private_response_group_message",
+        "value":"👋 Hello from group chat\n\n{nickname} ({subscriberId})"
+    },
+    {
+        "name":"{botname_lowercase}_group_and_private_response_private_message",
+        "value":"👋 Hello from private chat\n\n{nickname} ({subscriberId})"
     }
 ]
