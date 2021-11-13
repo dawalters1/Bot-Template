@@ -1,91 +1,91 @@
 [
     {
-        "name": "{botname_lowercase}_command_{botname_lowercase}",
+        "name": "{keyword}_command_{keyword}",
         "value":"!{botname_lowercase}"
     },
 
 
     {
-        "name": "{botname_lowercase}_command_help",
+        "name": "{keyword}_command_help",
         "value":"help"
     },
     {
-        "name": "{botname_lowercase}_help_message",
+        "name": "{keyword}_help_message",
         "value":"Welcome to the {BotName} bot\n\n!{botname_lowercase} help - To display this message\n!{botname_lowercase} example - To view the example command"
     },
 
 
     {
-        "name": "{botname_lowercase}_command_example",
+        "name": "{keyword}_command_example",
         "value":"example"
     },
     {
-        "name": "{botname_lowercase}_example_message",
+        "name": "{keyword}_example_message",
         "value":"This is an example message\n\n{nickname} ({subscriberId})"
     },
 
 
     {
-        "name": "{botname_lowercase}_command_capability",
+        "name": "{keyword}_command_capability",
         "value":"capability"
     },
     {
-        "name": "{botname_lowercase}_error_capability_mod+",
+        "name": "{keyword}_error_capability_mod+",
         "value":"(N) {nickname} ({subscriberId}), you must be at least mod to use this command"
     },
     {
-        "name": "{botname_lowercase}_group_capability_message+",
+        "name": "{keyword}_group_capability_message+",
         "value":"(Y) {nickname} ({subscriberId}), you are at least mod"
     },
 
 
     {
-        "name":"{botname_lowercase}_command_argument",
+        "name":"{keyword}_command_argument",
         "value": "arguments"
     },
     {
-        "name": "{botname_lowercase}_get_arguments_error_provide_arguments_message",
+        "name": "{keyword}_get_arguments_error_provide_arguments_message",
         "value":"(N) {nickname} ({subscriberId}), you must provide at least 1 argument for this command"
     },
     {
-        "name": "{botname_lowercase}_argument_message",
+        "name": "{keyword}_argument_message",
         "value":"Argument Count: {argCount}\nArguments: {args}"
     },  
     {
-        "name":"{botname_lowercase}_command_privilege",
+        "name":"{keyword}_command_privilege",
         "value": "privilege"
     },
     {
-        "name": "{botname_lowercase}_has_privilege_staff_message",
+        "name": "{keyword}_has_privilege_staff_message",
         "value":"{nickname} ({subscriberId}), you are staff"
     },
     {
-        "name": "{botname_lowercase}_has_privilege_alpha_tester_message",
+        "name": "{keyword}_has_privilege_alpha_tester_message",
         "value":"{nickname} ({subscriberId}), you are a client tester!"
     },
     {
-        "name": "{botname_lowercase}_has_privilege_bot_tester_message",
+        "name": "{keyword}_has_privilege_bot_tester_message",
         "value":"{nickname} ({subscriberId}), you are a bot tester!"
     },
     {
-        "name": "{botname_lowercase}_has_privilege_content_submitter_message",
+        "name": "{keyword}_has_privilege_content_submitter_message",
         "value":"{nickname} ({subscriberId}), you are a content submitter!"
     },
     {
-        "name": "{botname_lowercase}_has_privilege_volunteer_message",
+        "name": "{keyword}_has_privilege_volunteer_message",
         "value":"{nickname} ({subscriberId}), you are a volunteer!"
     },
 
     {
-        "name":"{botname_lowercase}_command_hello",
+        "name":"{keyword}_command_hello",
         "value":"hello"
     },
     {
-        "name":"{botname_lowercase}_group_and_private_response_group_message",
+        "name":"{keyword}_group_and_private_response_group_message",
         "value":"👋 Hello from group chat\n\n{nickname} ({subscriberId})"
     },
     {
-        "name":"{botname_lowercase}_group_and_private_response_private_message",
+        "name":"{keyword}_group_and_private_response_private_message",
         "value":"👋 Hello from private chat\n\n{nickname} ({subscriberId})"
     }
 ]

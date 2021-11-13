@@ -21,6 +21,6 @@ api.commandHandler().register([
     ])
 ]);
 
-api.on.ready(async () =>  console.log('ready'));
+api.on('ready', () =>  console.log('ready'));
 
 api.login('email', 'password');
