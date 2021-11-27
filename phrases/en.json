@@ -11,81 +11,116 @@
     },
     {
         "name": "{keyword}_help_message",
-        "value":"Welcome to the {BotName} bot\n\n!{botname_lowercase} help - To display this message\n!{botname_lowercase} example - To view the example command"
-    },
-
-
-    {
-        "name": "{keyword}_command_example",
-        "value":"example"
-    },
-    {
-        "name": "{keyword}_example_message",
-        "value":"This is an example message\n\n{nickname} ({subscriberId})"
-    },
-
-
-    {
-        "name": "{keyword}_command_capability",
-        "value":"capability"
-    },
-    {
-        "name": "{keyword}_error_capability_mod+",
-        "value":"(N) {nickname} ({subscriberId}), you must be at least mod to use this command"
-    },
-    {
-        "name": "{keyword}_group_capability_message+",
-        "value":"(Y) {nickname} ({subscriberId}), you are at least mod"
-    },
-
-
-    {
-        "name":"{keyword}_command_argument",
-        "value": "arguments"
-    },
-    {
-        "name": "{keyword}_get_arguments_error_provide_arguments_message",
-        "value":"(N) {nickname} ({subscriberId}), you must provide at least 1 argument for this command"
-    },
-    {
-        "name": "{keyword}_argument_message",
-        "value":"Argument Count: {argCount}\nArguments: {args}"
-    },  
-    {
-        "name":"{keyword}_command_privilege",
-        "value": "privilege"
-    },
-    {
-        "name": "{keyword}_has_privilege_staff_message",
-        "value":"{nickname} ({subscriberId}), you are staff"
-    },
-    {
-        "name": "{keyword}_has_privilege_alpha_tester_message",
-        "value":"{nickname} ({subscriberId}), you are a client tester!"
-    },
-    {
-        "name": "{keyword}_has_privilege_bot_tester_message",
-        "value":"{nickname} ({subscriberId}), you are a bot tester!"
-    },
-    {
-        "name": "{keyword}_has_privilege_content_submitter_message",
-        "value":"{nickname} ({subscriberId}), you are a content submitter!"
-    },
-    {
-        "name": "{keyword}_has_privilege_volunteer_message",
-        "value":"{nickname} ({subscriberId}), you are a volunteer!"
+        "value":"Welcome to the {BotName} bot\n\n!{botname_lowercase} help - To display this message\n!{botname_lowercase} get subscriber <id> - Get a subscribers profile\n!{botname_lowercase} get group <id> - Get a group profile\n!{botname_lowercase} join <id>, <password> - Join a group by ID\n!{botname_lowercase} leave <id> - Leave a group by ID"
     },
 
     {
-        "name":"{keyword}_command_hello",
-        "value":"hello"
+        "name":"{keyword}_command_get",
+        "value":"get"
+    },
+
+    {
+        "name":"{keyword}_command_group",
+        "value":"group"
     },
     {
-        "name":"{keyword}_group_and_private_response_group_message",
-        "value":"👋 Hello from group chat\n\n{nickname} ({subscriberId})"
+        "name":"{keyword}_group_profile_message",
+        "value":"Name: {name} (ID {id})\nDescription: {description}\nLevel: {level} ({percentage}%)\nLanguage: {language}\nMembers: {members}\n\nOwned By: {ownerNickname} (ID {ownerSubscriberId})"
     },
     {
-        "name":"{keyword}_group_and_private_response_private_message",
-        "value":"👋 Hello from private chat\n\n{nickname} ({subscriberId})"
+        "name":"{keyword}_group_profile_error_doesnt_exist_message",
+        "value":"(N) {nickname} (ID {subscriberId}), no such group exists with ID {id}"
+    },
+
+    {
+        "name":"{keyword}_command_subscriber",
+        "value":"subscriber"
+    },
+    {
+        "name":"{keyword}_subscriber_profile_message",
+        "value":"Nickname: {nickname} (ID {id}) (Selected Charm: {charm})\nStatus Message: {status}\nLevel: {level} ({percentage}%)\nOnline State: {onlineState}\nDevice Type: {deviceType}\nGender: {gender}\nRelationship: {relationship}\nLooking For: {lookingFor}\nLanguage: {language}"
+    },
+    {
+        "name":"{keyword}_subscriber_profile_error_doesnt_exist_message",
+        "value":"(N) {nickname} (ID {subscriberId}), no such subscriber exists with ID {id}"
+    },
+    {
+        "name":"{keyword}_none",
+        "value":"None"
+    },
+    {
+        "name":"{keyword}_charm_selected_message",
+        "value":"{name} (ID {id})"
+    },
+    {
+        "name":"{keyword}_group_no_avatar_message",
+        "value":"Group does not have an avatar"
+    },
+    {
+        "name":"{keyword}_subscriber_no_avatar_message",
+        "value":"Subscriber does not have an avatar"
+    },
+    {
+        "name":"{keyword}_not_specified",
+        "value":"Not Specified"
+    },
+    {
+        "name":"{keyword}_unknown",
+        "value":"Unknown"
     }
+    ,
+    {
+        "name":"{keyword}_command_join",
+        "value":"join"
+    },
+    {
+        "name":"{keyword}_permission_error_message",
+        "value":"(N) {nickname} (ID {subscriberId}), you are not allowed to use this command"
+    },
+    {
+        "name":"{keyword}_join_error_provide_arguments_message",
+        "value":"(N) {nickname} (ID {subscriberId}), please provide the ID of the group you want me to join"
+    },
+    {
+        "name":"{keyword}_join_error_invalid_group_id_message",
+        "value":"(N) {nickname} (ID {subscriberId}), '{arg}' is not a valid group ID"
+    },
+    {
+        "name":"{keyword}_join_success_message",
+        "value":"(Y) {nickname} (ID {subscriberId}), I have joined the requested group"
+    },
+    {
+        "name":"{keyword}_join_failed_message",
+        "value":"(N) {nickname} (ID {subscriberId}), I was unable to join the requested group\nReason: {reason}"
+    },
+    {
+        "name":"{keyword}_error_unknown_reason_message",
+        "value":"Unknown Reason"
+    },
+
+    {
+        "name":"{keyword}_command_leave",
+        "value":"leave"
+    },
+    {
+        "name":"{keyword}_leave_error_unsupported_message",
+        "value":"(N) {nickname} (ID {subscriberId}), you must provide the group ID you want me to leave"
+    },
+    {
+        "name":"{keyword}_leave_message",
+        "value":"(Y) {nickname} (ID {subscriberId}), I will now leave this group"
+    },
+    {
+        "name":"{keyword}_leave_error_invalid_group_id_message",
+        "value":"(N) {nickname} (ID {subscriberId}), '{arg}' is not a valid group ID"
+    },
+    {
+        "name":"{keyword}_leave_success_message",
+        "value":"(Y) {nickname} (ID {subscriberId}), I have left the requested group"
+    },
+    {
+        "name":"{keyword}_leave_failed_message",
+        "value":"(N) {nickname} (ID {subscriberId}), I was unable to leave the requested group\nReason: {reason}"
+    }
+
 ]

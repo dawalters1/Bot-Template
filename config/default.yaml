@@ -1,7 +1,7 @@
-keyword: {botname_lowercase} # SINGLE word only. EX: tag, battlestars, manager, dua, notes
+keyword: keyword # SINGLE word only. EX: tag, battlestars, manager, dua, notes
 app:
   defaultLanguage: en
-  developerId: {developer_id} # Your ID should go here
+  developerId: developer_id # Your ID should go here
   commandSettings:
     ignoreOfficialBots: true
     ignoreUnofficialBots: false

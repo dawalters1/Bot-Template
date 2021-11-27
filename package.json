@@ -7,11 +7,17 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js"
   },
-  "author": "{developer}",
+  "author": "{Developer_Name}",
   "license": "ISC",
   "dependencies": {
-    "@dawalters1/constants": "1.0.4",
-    "@dawalters1/wolf.js": "0.20.0",
+    "@dawalters1/wolf.js": "^0.20.0-beta.25",
     "config": "^3.3.6"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0"
   }
 }
