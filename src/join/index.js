@@ -1,10 +1,10 @@
-const validator = require('@dawalters1/wolf.js').Validator;
-const { Privilege } = require('@dawalters1/wolf.js').Constants;
+const validator = require('wolf.js').Validator;
+const { Privilege } = require('wolf.js').Constants;
 
 /**
  * Required for intellisense to work with api & command
- * @param {import('@dawalters1/wolf.js').WOLFBot} api
- * @param {import('@dawalters1/wolf.js').CommandObject} command
+ * @param {import('wolf.js').WOLFBot} api
+ * @param {import('wolf.js').CommandObject} command
  */
 module.exports = async (api, command) => {
   // Check to see if the user is authorized, staff or the bot developer

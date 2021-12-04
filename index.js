@@ -1,5 +1,5 @@
 
-const WOLF = require('@dawalters1/wolf.js');
+const WOLF = require('wolf.js');
 const api = new WOLF.WOLFBot();
 
 const help = require('./src/help');

@@ -1,9 +1,9 @@
-const validator = require('@dawalters1/wolf.js').Validator;
+const validator = require('wolf.js').Validator;
 
 /**
  * Required for intellisense to work with api & command
- * @param {import('@dawalters1/wolf.js').WOLFBot} api
- * @param {import('@dawalters1/wolf.js').CommandObject} command
+ * @param {import('wolf.js').WOLFBot} api
+ * @param {import('wolf.js').CommandObject} command
  */
 module.exports = async (api, command) => {
   const userInput = await command.argument.split(api.SPLIT_REGEX).filter(Boolean)[0];
