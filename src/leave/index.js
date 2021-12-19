@@ -46,7 +46,7 @@ module.exports = async (api, command) => {
     return await api.group().leaveById(command.targetGroupId);
   }
 
-  const userInput = command.argument.split(/[\n\t,،\s+]/g).filter(Boolean)[0];
+  const userInput = command.argument.split(api.SPLIT_REGEX).filter(Boolean)[0];
 
   if (validator.isLessThanOrEqualZero(userInput)) {
     return await api.messaging().sendMessage(

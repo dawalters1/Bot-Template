@@ -32,7 +32,7 @@ module.exports = async (api, command) => {
     );
   }
 
-  const args = command.argument.split(/[\n\t,،\s+]/g).filter(Boolean);
+  const args = command.argument.split(api.SPLIT_REGEX).filter(Boolean);
 
   if (validator.isLessThanOrEqualZero(args[0])) {
     return await api.messaging().sendMessage(
