@@ -5,9 +5,6 @@ app:
   commandSettings:
     ignoreOfficialBots: true
     ignoreUnofficialBots: false
-  networkSettings:
-    retryMode: 1 # 1 always retry , 0 always fail - 500 Internal Server Error, 502 Bad Gateway, 503 Service Unavailable, 504 Gateway Timeout & 408 Timeout
-    retryAttempts: 1
 
 redis:
   host: localhost
