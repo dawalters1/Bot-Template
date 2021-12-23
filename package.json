@@ -7,11 +7,11 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js"
   },
-  "author": "{Developer_Name}",
+  "author": "{developer}",
   "license": "ISC",
   "dependencies": {
     "config": "^3.3.6",
-    "wolf.js": "^1.0.0-beta.41"
+    "wolf.js": "^1.0.4"
   },
   "devDependencies": {
     "eslint": "^7.32.0",
