@@ -10,7 +10,8 @@ const leave = require('./src/leave');
 const keyword = api.config.keyword;
 
 api.commandHandler().register([
-  new WOLF.Command(`${keyword}_command_${keyword}`, { both: (command) => help(api, command) },
+  // Base Command 1
+  new WOLF.Command(`${keyword}_command_${keyword}`, { both: (command) => help(api, command, 'default') },
     [
       new WOLF.Command(`${keyword}_command_help`, { both: (command) => help(api, command) }),
       new WOLF.Command(`${keyword}_command_get`, { group: (command) => help(api, command) },
@@ -20,6 +21,19 @@ api.commandHandler().register([
         ]),
       new WOLF.Command(`${keyword}_command_join`, { both: (command) => join(api, command) }),
       new WOLF.Command(`${keyword}_command_leave`, { both: (command) => leave(api, command) })
+    ]
+  ),
+
+  // Base Command 2 - Example !blackjack
+  new WOLF.Command(`${keyword}_command_blackjack`, { both: (command) => help(api, command, 'blackjack') },
+    [
+    // Add blackjack commands here
+    ]),
+
+  // Base Command 3 - Example !roulette
+  new WOLF.Command(`${keyword}_command_roulette`, { both: (command) => help(api, command, 'roulette') },
+    [
+    // Add roulette commands here
     ])
 ]);
 

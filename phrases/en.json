@@ -10,7 +10,25 @@
         "value":"help"
     },
     {
-        "name": "{keyword}_help_message",
+        "name": "{keyword}_help_default_message",
+        "value":"Welcome to the {BotName} bot\n\n!{botname_lowercase} help - To display this message\n!{botname_lowercase} get subscriber <id> - Get a subscribers profile\n!{botname_lowercase} get group <id> - Get a group profile\n!{botname_lowercase} join <id>, <password> - Join a group by ID\n!{botname_lowercase} leave <id> - Leave a group by ID"
+    },
+
+    {
+        "name": "{keyword}_command_blackjack",
+        "value":"!blackjack"
+    },
+    {
+        "name": "{keyword}_help_blackjack_message",
+        "value":"Welcome to the {BotName} bot\n\n!{botname_lowercase} help - To display this message\n!{botname_lowercase} get subscriber <id> - Get a subscribers profile\n!{botname_lowercase} get group <id> - Get a group profile\n!{botname_lowercase} join <id>, <password> - Join a group by ID\n!{botname_lowercase} leave <id> - Leave a group by ID"
+    },
+
+    {
+        "name": "{keyword}_command_roulette",
+        "value":"!roulette"
+    },
+    {
+        "name": "{keyword}_help_roulette_message",
         "value":"Welcome to the {BotName} bot\n\n!{botname_lowercase} help - To display this message\n!{botname_lowercase} get subscriber <id> - Get a subscribers profile\n!{botname_lowercase} get group <id> - Get a group profile\n!{botname_lowercase} join <id>, <password> - Join a group by ID\n!{botname_lowercase} leave <id> - Leave a group by ID"
     },
 
