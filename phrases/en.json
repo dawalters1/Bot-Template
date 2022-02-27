@@ -15,20 +15,20 @@
     },
 
     {
-        "name": "{keyword}_command_blackjack",
-        "value":"!blackjack"
+        "name": "{keyword}_command_example2",
+        "value":"!example2"
     },
     {
-        "name": "{keyword}_help_blackjack_message",
+        "name": "{keyword}_help_example2_message",
         "value":"Welcome to the {BotName} bot\n\n!{botname_lowercase} help - To display this message\n!{botname_lowercase} get subscriber <id> - Get a subscribers profile\n!{botname_lowercase} get group <id> - Get a group profile\n!{botname_lowercase} join <id>, <password> - Join a group by ID\n!{botname_lowercase} leave <id> - Leave a group by ID"
     },
 
     {
-        "name": "{keyword}_command_roulette",
-        "value":"!roulette"
+        "name": "{keyword}_command_example3",
+        "value":"!example3"
     },
     {
-        "name": "{keyword}_help_roulette_message",
+        "name": "{keyword}_help_example3_message",
         "value":"Welcome to the {BotName} bot\n\n!{botname_lowercase} help - To display this message\n!{botname_lowercase} get subscriber <id> - Get a subscribers profile\n!{botname_lowercase} get group <id> - Get a group profile\n!{botname_lowercase} join <id>, <password> - Join a group by ID\n!{botname_lowercase} leave <id> - Leave a group by ID"
     },
 

@@ -25,13 +25,13 @@ api.commandHandler().register([
   ),
 
   // Base Command 2 - Example !blackjack
-  new WOLF.Command(`${keyword}_command_blackjack`, { both: (command) => help(api, command, 'blackjack') },
+  new WOLF.Command(`${keyword}_command_example2`, { both: (command) => help(api, command, 'example2') },
     [
     // Add blackjack commands here
     ]),
 
   // Base Command 3 - Example !roulette
-  new WOLF.Command(`${keyword}_command_roulette`, { both: (command) => help(api, command, 'roulette') },
+  new WOLF.Command(`${keyword}_command_example3`, { both: (command) => help(api, command, 'example3') },
     [
     // Add roulette commands here
     ])
@@ -45,6 +45,7 @@ api.on('privateMessage', async (message) => {
   }
 
   message.language = (await api.subscriber().getById(message.sourceSubscriberId)).language;
+
   return await help(api, message);
 });
 

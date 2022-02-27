@@ -8,7 +8,7 @@ const { Privilege } = require('wolf.js').Constants;
  */
 module.exports = async (api, command) => {
   // Check to see if the user is authorized, staff or the bot developer
-  if (api.config.app.developerId !== command.sourceSubscriberId && !await api.utility().subscriber().privilege().has(command.sourceSubscriberId, Privilege.STAFF) && !api.authorization().isAuthorized(command.sourceSubscriberId)) {
+  if (api.config.app.developerId !== command.sourceSubscriberId && !await api.utility().subscriber().privilege().has(command.sourceSubscriberId, Privilege.STAFF) && !await api.authorization().isAuthorized(command.sourceSubscriberId)) {
     return await api.messaging().sendMessage(
       command,
       api.utility().string().replace(api.phrase().getByLanguageAndName(command.language, `${api.config.keyword}_permission_error_message`),
