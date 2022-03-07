@@ -1,6 +1,6 @@
 
-const WOLF = require('wolf.js');
-const api = new WOLF.WOLFBot();
+const { WOLFBot, Command } = require('wolf.js');
+const api = new WOLFBot();
 
 const help = require('./src/help');
 const { group, subscriber } = require('./src/get');
@@ -11,27 +11,27 @@ const keyword = api.config.keyword;
 
 api.commandHandler().register([
   // Base Command 1
-  new WOLF.Command(`${keyword}_command_${keyword}`, { both: (command) => help(api, command, 'default') },
+  new Command(`${keyword}_command_${keyword}`, { both: (command) => help(api, command, 'default') },
     [
-      new WOLF.Command(`${keyword}_command_help`, { both: (command) => help(api, command) }),
-      new WOLF.Command(`${keyword}_command_get`, { group: (command) => help(api, command) },
+      new Command(`${keyword}_command_help`, { both: (command) => help(api, command) }),
+      new Command(`${keyword}_command_get`, { group: (command) => help(api, command) },
         [
-          new WOLF.Command(`${keyword}_command_group`, { group: (command) => group(api, command) }),
-          new WOLF.Command(`${keyword}_command_subscriber`, { group: (command) => subscriber(api, command) })
+          new Command(`${keyword}_command_group`, { group: (command) => group(api, command) }),
+          new Command(`${keyword}_command_subscriber`, { group: (command) => subscriber(api, command) })
         ]),
-      new WOLF.Command(`${keyword}_command_join`, { both: (command) => join(api, command) }),
-      new WOLF.Command(`${keyword}_command_leave`, { both: (command) => leave(api, command) })
+      new Command(`${keyword}_command_join`, { both: (command) => join(api, command) }),
+      new Command(`${keyword}_command_leave`, { both: (command) => leave(api, command) })
     ]
   ),
 
   // Base Command 2 - Example !blackjack
-  new WOLF.Command(`${keyword}_command_example2`, { both: (command) => help(api, command, 'example2') },
+  new Command(`${keyword}_command_example2`, { both: (command) => help(api, command, 'example2') },
     [
     // Add blackjack commands here
     ]),
 
   // Base Command 3 - Example !roulette
-  new WOLF.Command(`${keyword}_command_example3`, { both: (command) => help(api, command, 'example3') },
+  new Command(`${keyword}_command_example3`, { both: (command) => help(api, command, 'example3') },
     [
     // Add roulette commands here
     ])

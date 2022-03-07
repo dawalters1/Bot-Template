@@ -100,6 +100,27 @@
         "value":"(N) {nickname} (ID {subscriberId}), please provide the ID of the group you want me to join"
     },
     {
+        "name":"{keyword}_join_error_group_doesnt_exist_message",
+        "value":"(N) No such group exists with ID '{args}'\n\n{nickname} (ID {subscriberId})"
+    },
+    {
+        "name":"{keyword}_join_error_group_owner_only_message",
+        "value":"(N) Only the owner of the group can request me\n\n{nickname} (ID {subscriberId})"
+    },
+    {
+        "name":"{keyword}_join_error_group_requirements_members_too_small_message",
+        "value":"(N) The requested group does not have enough members in it\nThere must be at least {min} members before I can join.\n\n{nickname} (ID {subscriberId})"
+    },
+    {
+        "name":"{keyword}_join_error_group_requirements_members_too_large_message",
+        "value":"(N) The requested group has too many members in it\nThere must be less than {max} members before I can join.\n\n{nickname} (ID {subscriberId})"
+    },
+    {
+        "name":"{keyword}_join_error_group_owner_banned_message",
+        "value":"(N) You are not allowed to have this bot in your groups ~ Bot Developer :)\n\n{nickname} ({subscriberId})"
+    },
+
+    {
         "name":"{keyword}_join_error_invalid_group_id_message",
         "value":"(N) {nickname} (ID {subscriberId}), '{arg}' is not a valid group ID"
     },

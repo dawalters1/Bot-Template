@@ -6,6 +6,14 @@ app:
     ignoreOfficialBots: true
     ignoreUnofficialBots: false
 
+join:
+  enabled: true
+  validation:
+    members: 
+      min: 500   
+      max: 2500
+    ownerIdBlacklist: []
+
 redis:
   host: localhost
   port: 6379
