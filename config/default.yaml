@@ -5,6 +5,11 @@ app:
   commandSettings:
     ignoreOfficialBots: true
     ignoreUnofficialBots: false
+  messageSettings:
+    subscriptions: # Optional, All TRUE by Default
+      groupTipping: false # Prevent the bot from receiving group tip events
+      groupMessages: true # Prevent the bot from receiving group message events
+      privateMessages: true # Prevent the bot from receiving private message events    
 
 join:
   enabled: true
