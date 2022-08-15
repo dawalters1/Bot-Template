@@ -1,4 +1,4 @@
-const help = require('../../../Bot-Tag/src/help');
+const help = require('../../src/help');
 const validator = require('wolf.js').Validator;
 
 /**
