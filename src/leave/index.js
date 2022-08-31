@@ -61,7 +61,7 @@ module.exports = async (api, command) => {
     );
   }
 
-  const result = await await api.group().leaveById(parseInt(userInput));
+  const result = await api.group().leaveById(parseInt(userInput));
 
   return await api.messaging().sendMessage(
     command,
