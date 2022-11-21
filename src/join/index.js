@@ -1,38 +1,38 @@
-const help = require('../../src/help');
-const validator = require('wolf.js').Validator;
+import { Validator } from 'wolf.js';
+import help from '../help/index.js';
 
 /**
- * Required for intellisense to work with api & command
- * @param {import('wolf.js').WOLFBot} api
- * @param {import('wolf.js').CommandObject} command
+ *
+ * @param {import('wolf.js').WOLF} client
+ * @param {import('wolf.js').CommandContext} command
  */
-module.exports = async (api, command) => {
-  const joinConfig = api.config.get('join');
+export default async function (client, command) {
+  const joinConfig = client.config.get('join');
 
   if (!joinConfig.enabled) {
-    return await help(api, command);
+    return await help(client, command);
   }
 
   if (!command.argument) {
-    return await api.messaging().sendMessage(
+    return await client.messaging.sendMessage(
       command,
-      api.utility().string().replace(api.phrase().getByLanguageAndName(command.language, `${api.config.keyword}_join_error_provide_arguments_message`),
+      client.utility.string.replace(client.phrase.getByLanguageAndName(command.language, `${client.config.keyword}_join_error_provide_arguments_message`),
         {
-          nickname: (await api.subscriber().getById(command.sourceSubscriberId)).nickname,
+          nickname: (await client.subscriber.getById(command.sourceSubscriberId)).nickname,
           subscriberId: command.sourceSubscriberId
         }
       )
     );
   }
 
-  const args = command.argument.split(api.SPLIT_REGEX).filter(Boolean);
+  const args = command.argument.split(client.SPLIT_REGEX).filter(Boolean);
 
-  if (validator.isLessThanOrEqualZero(args[0])) {
-    return await api.messaging().sendMessage(
+  if (Validator.isLessThanOrEqualZero(args[0])) {
+    return await client.messaging.sendMessage(
       command,
-      api.utility().string().replace(api.phrase().getByLanguageAndName(command.language, `${api.config.keyword}_join_error_invalid_group_id_message`),
+      client.utility.string.replace(client.phrase.getByLanguageAndName(command.language, `${client.config.keyword}_join_error_invalid_group_id_message`),
         {
-          nickname: (await api.subscriber().getById(command.sourceSubscriberId)).nickname,
+          nickname: (await client.subscriber.getById(command.sourceSubscriberId)).nickname,
           subscriberId: command.sourceSubscriberId,
           arg: args[0]
         }
@@ -43,25 +43,25 @@ module.exports = async (api, command) => {
   const ownerIdBlacklist = joinConfig.validation.ownerIdBlacklist;
 
   if (ownerIdBlacklist.includes(command.sourceSubscriberId)) {
-    return await api.messaging().sendMessage(
+    return await client.messaging.sendMessage(
       command,
-      api.utility().string().replace(api.phrase().getByLanguageAndName(command.language, `${api.config.keyword}_join_error_group_owner_banned_message`),
+      client.utility.string.replace(client.phrase.getByLanguageAndName(command.language, `${client.config.keyword}_join_error_group_owner_banned_message`),
         {
-          nickname: (await api.subscriber().getById(command.sourceSubscriberId)).nickname,
+          nickname: (await client.subscriber.getById(command.sourceSubscriberId)).nickname,
           subscriberId: command.sourceSubscriberId
         }
       )
     );
   }
 
-  const { id, owner, members, exists } = await api.group().getById(parseInt(api.utility().number().toEnglishNumbers(args[0])));
+  const { id, owner, members, exists } = await client.group.getById(parseInt(client.utility.number.toEnglishNumbers(args[0])));
 
   if (!exists) {
-    return await api.messaging().sendMessage(
+    return await client.messaging.sendMessage(
       command,
-      api.utility().string().replace(api.phrase().getByLanguageAndName(command.language, `${api.config.keyword}_join_error_group_doesnt_exist_message`),
+      client.utility.string.replace(client.phrase.getByLanguageAndName(command.language, `${client.config.keyword}_join_error_group_doesnt_exist_message`),
         {
-          nickname: (await api.subscriber().getById(command.sourceSubscriberId)).nickname,
+          nickname: (await client.subscriber.getById(command.sourceSubscriberId)).nickname,
           subscriberId: command.sourceSubscriberId,
           arg: id
         }
@@ -70,11 +70,11 @@ module.exports = async (api, command) => {
   }
 
   if (command.sourceSubscriberId !== owner.id) {
-    return await api.messaging().sendMessage(
+    return await client.messaging.sendMessage(
       command,
-      api.utility().string().replace(api.phrase().getByLanguageAndName(command.language, `${api.config.keyword}_join_error_group_owner_only_message`),
+      client.utility.string.replace(client.phrase.getByLanguageAndName(command.language, `${client.config.keyword}_join_error_group_owner_only_message`),
         {
-          nickname: (await api.subscriber().getById(command.sourceSubscriberId)).nickname,
+          nickname: (await client.subscriber.getById(command.sourceSubscriberId)).nickname,
           subscriberId: command.sourceSubscriberId
         }
       )
@@ -84,28 +84,28 @@ module.exports = async (api, command) => {
   const memberConfig = joinConfig.validation.members;
 
   if (members < memberConfig.min || members > memberConfig.max) {
-    return await api.messaging().sendMessage(
+    return await client.messaging.sendMessage(
       command,
-      api.utility().string().replace(api.phrase().getByLanguageAndName(command.language, `${api.config.keyword}_join_error_group_requirements_members_too_${members < memberConfig.min ? 'small' : 'large'}_message`),
+      client.utility.string.replace(client.phrase.getByLanguageAndName(command.language, `${client.config.keyword}_join_error_group_requirements_members_too_${members < memberConfig.min ? 'small' : 'large'}_message`),
         {
-          nickname: (await api.subscriber().getById(command.sourceSubscriberId)).nickname,
+          nickname: (await client.subscriber.getById(command.sourceSubscriberId)).nickname,
           subscriberId: command.sourceSubscriberId,
-          min: api.utility().number().addCommas(memberConfig.min),
-          max: api.utility().number().addCommas(memberConfig.max)
+          min: client.utility.number.addCommas(memberConfig.min),
+          max: client.utility.number.addCommas(memberConfig.max)
         }
       )
     );
   }
 
-  const result = await api.group().joinById(id, args[1]);
+  const result = await client.group.joinById(id, args[1]);
 
-  return await api.messaging().sendMessage(
+  return await client.messaging.sendMessage(
     command,
-    api.utility().string().replace(api.phrase().getByLanguageAndName(command.language, `${api.config.keyword}_join_${result.success ? 'success' : 'failed'}_message`),
+    client.utility.string.replace(client.phrase.getByLanguageAndName(command.language, `${client.config.keyword}_join_${result.success ? 'success' : 'failed'}_message`),
       {
-        nickname: (await api.subscriber().getById(command.sourceSubscriberId)).nickname,
+        nickname: (await client.subscriber.getById(command.sourceSubscriberId)).nickname,
         subscriberId: command.sourceSubscriberId,
-        reason: result.success ? '' : result.headers && result.headers.message ? result.headers.message : api.phrase().getByLanguageAndName(command.language, `${api.config.keyword}_error_unknown_reason_message`)
+        reason: result.success ? '' : result.headers && result.headers.message ? result.headers.message : client.phrase.getByLanguageAndName(command.language, `${client.config.keyword}_error_unknown_reason_message`)
       }
     )
   );

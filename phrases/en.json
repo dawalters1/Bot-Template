@@ -1,165 +1,262 @@
 [
     {
         "name": "{keyword}_command_{keyword}",
-        "value":"!{botname_lowercase}"
+        "value": "!test"
     },
-
-
     {
         "name": "{keyword}_command_help",
-        "value":"help"
+        "value": "help"
     },
     {
-        "name": "{keyword}_help_default_message",
-        "value":"Welcome to the {BotName} bot\n\n!{botname_lowercase} help - To display this message\n!{botname_lowercase} get subscriber <id> - Get a subscribers profile\n!{botname_lowercase} get group <id> - Get a group profile\n!{botname_lowercase} join <id>, <password> - Join a group by ID\n!{botname_lowercase} leave <id> - Leave a group by ID"
+        "name": "{keyword}_help_message",
+        "value": "Welcome to the {BotName} bot\n\n!{botname_lowercase} help - To display this message\n!{botname_lowercase} get subscriber <id> - Get a subscribers profile\n!{botname_lowercase} get group <id> - Get a group profile\n!{botname_lowercase} join <id>, <password> - Join a group by ID\n!{botname_lowercase} leave <id> - Leave a group by ID"
     },
-
     {
         "name": "{keyword}_command_example2",
-        "value":"!example2"
+        "value": "!example2"
     },
     {
         "name": "{keyword}_help_example2_message",
-        "value":"Welcome to the {BotName} bot\n\n!{botname_lowercase} help - To display this message\n!{botname_lowercase} get subscriber <id> - Get a subscribers profile\n!{botname_lowercase} get group <id> - Get a group profile\n!{botname_lowercase} join <id>, <password> - Join a group by ID\n!{botname_lowercase} leave <id> - Leave a group by ID"
+        "value": "Welcome to the {BotName} bot\n\n!{botname_lowercase} help - To display this message\n!{botname_lowercase} get subscriber <id> - Get a subscribers profile\n!{botname_lowercase} get group <id> - Get a group profile\n!{botname_lowercase} join <id>, <password> - Join a group by ID\n!{botname_lowercase} leave <id> - Leave a group by ID"
     },
-
     {
         "name": "{keyword}_command_example3",
-        "value":"!example3"
+        "value": "!example3"
     },
     {
         "name": "{keyword}_help_example3_message",
-        "value":"Welcome to the {BotName} bot\n\n!{botname_lowercase} help - To display this message\n!{botname_lowercase} get subscriber <id> - Get a subscribers profile\n!{botname_lowercase} get group <id> - Get a group profile\n!{botname_lowercase} join <id>, <password> - Join a group by ID\n!{botname_lowercase} leave <id> - Leave a group by ID"
-    },
-
-    {
-        "name":"{keyword}_command_get",
-        "value":"get"
-    },
-
-    {
-        "name":"{keyword}_command_group",
-        "value":"group"
+        "value": "Welcome to the {BotName} bot\n\n!{botname_lowercase} help - To display this message\n!{botname_lowercase} get subscriber <id> - Get a subscribers profile\n!{botname_lowercase} get group <id> - Get a group profile\n!{botname_lowercase} join <id>, <password> - Join a group by ID\n!{botname_lowercase} leave <id> - Leave a group by ID"
     },
     {
-        "name":"{keyword}_group_profile_message",
-        "value":"Name: {name} (ID {id})\nDescription: {description}\nLevel: {level} ({percentage}%)\nLanguage: {language}\nMembers: {members}\n\nOwned By: {ownerNickname} (ID {ownerSubscriberId})"
+        "name": "{keyword}_command_get",
+        "value": "get"
     },
     {
-        "name":"{keyword}_group_profile_error_doesnt_exist_message",
-        "value":"(N) {nickname} (ID {subscriberId}), no such group exists with ID {id}"
-    },
-
-    {
-        "name":"{keyword}_command_subscriber",
-        "value":"subscriber"
+        "name": "{keyword}_command_group",
+        "value": "group"
     },
     {
-        "name":"{keyword}_subscriber_profile_message",
-        "value":"Nickname: {nickname} (ID {id}) (Selected Charm: {charm})\nStatus Message: {status}\nLevel: {level} ({percentage}%)\nOnline State: {onlineState}\nDevice Type: {deviceType}\nGender: {gender}\nRelationship: {relationship}\nLooking For: {lookingFor}\nLanguage: {language}"
+        "name": "{keyword}_group_profile_message",
+        "value": "Name: {name} (ID {id})\nDescription: {description}\nLevel: {level} ({percentage}%)\nLanguage: {language}\nMembers: {members}\n\nOwned By: {ownerNickname} (ID {ownerSubscriberId})"
     },
     {
-        "name":"{keyword}_subscriber_profile_error_doesnt_exist_message",
-        "value":"(N) {nickname} (ID {subscriberId}), no such subscriber exists with ID {id}"
+        "name": "{keyword}_group_profile_error_doesnt_exist_message",
+        "value": "(N) {nickname} (ID {subscriberId}), no such group exists with ID {id}"
     },
     {
-        "name":"{keyword}_none",
-        "value":"None"
+        "name": "{keyword}_command_subscriber",
+        "value": "subscriber"
     },
     {
-        "name":"{keyword}_charm_selected_message",
-        "value":"{name} (ID {id})"
+        "name": "{keyword}_subscriber_profile_message",
+        "value": "Nickname: {nickname} (ID {id}) (Selected Charm: {charm})\nStatus Message: {status}\nLevel: {level} ({percentage}%)\nOnline State: {onlineState}\nDevice Type: {deviceType}\nGender: {gender}\nRelationship: {relationship}\nLooking For: {lookingFor}\nLanguage: {language}"
     },
     {
-        "name":"{keyword}_group_no_avatar_message",
-        "value":"Group does not have an avatar"
+        "name": "{keyword}_subscriber_profile_error_doesnt_exist_message",
+        "value": "(N) {nickname} (ID {subscriberId}), no such subscriber exists with ID {id}"
     },
     {
-        "name":"{keyword}_subscriber_no_avatar_message",
-        "value":"Subscriber does not have an avatar"
+        "name": "{keyword}_none",
+        "value": "None"
     },
     {
-        "name":"{keyword}_not_specified",
-        "value":"Not Specified"
+        "name": "{keyword}_charm_selected_message",
+        "value": "{name} (ID {id})"
     },
     {
-        "name":"{keyword}_unknown",
-        "value":"Unknown"
+        "name": "{keyword}_group_no_avatar_message",
+        "value": "Group does not have an avatar"
+    },
+    {
+        "name": "{keyword}_subscriber_no_avatar_message",
+        "value": "Subscriber does not have an avatar"
+    },
+    {
+        "name": "{keyword}_not_specified",
+        "value": "Not Specified"
+    },
+    {
+        "name": "{keyword}_unknown",
+        "value": "Unknown"
+    },
+    {
+        "name": "{keyword}_onlineState_0",
+        "value": "Offline"
+    },
+    {
+        "name": "{keyword}_onlineState_1",
+        "value": "Online"
+    },
+    {
+        "name": "{keyword}_onlineState_2",
+        "value": "Away"
+    },
+    {
+        "name": "{keyword}_onlineState_3",
+        "value": "Invisible"
+    },
+    {
+        "name": "{keyword}_onlineState_5",
+        "value": "Busy"
+    },
+    {
+        "name": "{keyword}_onlineState_9",
+        "value": "Idle"
+    },
+    {
+        "name": "{keyword}_deviceType_0",
+        "value": "Unknown"
+    },
+    {
+        "name": "{keyword}_deviceType_1",
+        "value": "Bot"
+    },
+    {
+        "name": "{keyword}_deviceType_5",
+        "value": "iPhone"
+    },
+    {
+        "name": "{keyword}_deviceType_6",
+        "value": "iPad"
+    },
+    {
+        "name": "{keyword}_deviceType_7",
+        "value": "Android"
+    },
+    {
+        "name": "{keyword}_deviceType_8",
+        "value": "Web"
+    },
+    {
+        "name": "{keyword}_gender_0",
+        "value": "Not Specified"
+    },
+    {
+        "name": "{keyword}_gender_1",
+        "value": "Male"
+    },
+    {
+        "name": "{keyword}_gender_2",
+        "value": "Female"
+    },
+    {
+        "name": "{keyword}_lookingFor_0",
+        "value": "Not Specified"
+    },
+    {
+        "name": "{keyword}_lookingFor_1",
+        "value": "Friendship"
+    },
+    {
+        "name": "{keyword}_lookingFor_2",
+        "value": "Dating"
+    },
+    {
+        "name": "{keyword}_lookingFor_3",
+        "value": "Relationship"
+    },
+    {
+        "name": "{keyword}_lookingFor_4",
+        "value": "Networking"
+    },
+    {
+        "name": "{keyword}_lookingFor_0",
+        "value": "Not Specified"
+    },
+    {
+        "name": "{keyword}_relationship_1",
+        "value": "Single"
+    },
+    {
+        "name": "{keyword}_relationship_2",
+        "value": "Relationship"
+    },
+    {
+        "name": "{keyword}_relationship_3",
+        "value": "Engaged"
+    },
+    {
+        "name": "{keyword}_relationship_4",
+        "value": "Married"
+    },
+    {
+        "name": "{keyword}_relationship_5",
+        "value": "Complicated"
+    },
+    {
+        "name": "{keyword}_relationship_6",
+        "value": "Open"
+    },
+    {
+        "name": "{keyword}_command_join",
+        "value": "join"
+    },
+    {
+        "name": "{keyword}_permission_error_message",
+        "value": "(N) {nickname} (ID {subscriberId}), you are not allowed to use this command"
+    },
+    {
+        "name": "{keyword}_join_error_provide_arguments_message",
+        "value": "(N) {nickname} (ID {subscriberId}), please provide the ID of the group you want me to join"
+    },
+    {
+        "name": "{keyword}_join_error_group_doesnt_exist_message",
+        "value": "(N) No such group exists with ID '{args}'\n\n{nickname} (ID {subscriberId})"
+    },
+    {
+        "name": "{keyword}_join_error_group_owner_only_message",
+        "value": "(N) Only the owner of the group can request me\n\n{nickname} (ID {subscriberId})"
+    },
+    {
+        "name": "{keyword}_join_error_group_requirements_members_too_small_message",
+        "value": "(N) The requested group does not have enough members in it\nThere must be at least {min} members before I can join.\n\n{nickname} (ID {subscriberId})"
+    },
+    {
+        "name": "{keyword}_join_error_group_requirements_members_too_large_message",
+        "value": "(N) The requested group has too many members in it\nThere must be less than {max} members before I can join.\n\n{nickname} (ID {subscriberId})"
+    },
+    {
+        "name": "{keyword}_join_error_group_owner_banned_message",
+        "value": "(N) You are not allowed to have this bot in your groups ~ Bot Developer :)\n\n{nickname} ({subscriberId})"
+    },
+    {
+        "name": "{keyword}_join_error_invalid_group_id_message",
+        "value": "(N) {nickname} (ID {subscriberId}), '{arg}' is not a valid group ID"
+    },
+    {
+        "name": "{keyword}_join_success_message",
+        "value": "(Y) {nickname} (ID {subscriberId}), I have joined the requested group"
+    },
+    {
+        "name": "{keyword}_join_failed_message",
+        "value": "(N) {nickname} (ID {subscriberId}), I was unable to join the requested group\nReason: {reason}"
+    },
+    {
+        "name": "{keyword}_error_unknown_reason_message",
+        "value": "Unknown Reason"
+    },
+    {
+        "name": "{keyword}_command_leave",
+        "value": "leave"
+    },
+    {
+        "name": "{keyword}_leave_error_unsupported_message",
+        "value": "(N) {nickname} (ID {subscriberId}), you must provide the group ID you want me to leave"
+    },
+    {
+        "name": "{keyword}_leave_message",
+        "value": "(Y) {nickname} (ID {subscriberId}), I will now leave this group"
+    },
+    {
+        "name": "{keyword}_leave_error_invalid_group_id_message",
+        "value": "(N) {nickname} (ID {subscriberId}), '{arg}' is not a valid group ID"
+    },
+    {
+        "name": "{keyword}_leave_success_message",
+        "value": "(Y) {nickname} (ID {subscriberId}), I have left the requested group"
+    },
+    {
+        "name": "{keyword}_leave_failed_message",
+        "value": "(N) {nickname} (ID {subscriberId}), I was unable to leave the requested group\nReason: {reason}"
     }
-    ,
-    {
-        "name":"{keyword}_command_join",
-        "value":"join"
-    },
-    {
-        "name":"{keyword}_permission_error_message",
-        "value":"(N) {nickname} (ID {subscriberId}), you are not allowed to use this command"
-    },
-    {
-        "name":"{keyword}_join_error_provide_arguments_message",
-        "value":"(N) {nickname} (ID {subscriberId}), please provide the ID of the group you want me to join"
-    },
-    {
-        "name":"{keyword}_join_error_group_doesnt_exist_message",
-        "value":"(N) No such group exists with ID '{args}'\n\n{nickname} (ID {subscriberId})"
-    },
-    {
-        "name":"{keyword}_join_error_group_owner_only_message",
-        "value":"(N) Only the owner of the group can request me\n\n{nickname} (ID {subscriberId})"
-    },
-    {
-        "name":"{keyword}_join_error_group_requirements_members_too_small_message",
-        "value":"(N) The requested group does not have enough members in it\nThere must be at least {min} members before I can join.\n\n{nickname} (ID {subscriberId})"
-    },
-    {
-        "name":"{keyword}_join_error_group_requirements_members_too_large_message",
-        "value":"(N) The requested group has too many members in it\nThere must be less than {max} members before I can join.\n\n{nickname} (ID {subscriberId})"
-    },
-    {
-        "name":"{keyword}_join_error_group_owner_banned_message",
-        "value":"(N) You are not allowed to have this bot in your groups ~ Bot Developer :)\n\n{nickname} ({subscriberId})"
-    },
-
-    {
-        "name":"{keyword}_join_error_invalid_group_id_message",
-        "value":"(N) {nickname} (ID {subscriberId}), '{arg}' is not a valid group ID"
-    },
-    {
-        "name":"{keyword}_join_success_message",
-        "value":"(Y) {nickname} (ID {subscriberId}), I have joined the requested group"
-    },
-    {
-        "name":"{keyword}_join_failed_message",
-        "value":"(N) {nickname} (ID {subscriberId}), I was unable to join the requested group\nReason: {reason}"
-    },
-    {
-        "name":"{keyword}_error_unknown_reason_message",
-        "value":"Unknown Reason"
-    },
-
-    {
-        "name":"{keyword}_command_leave",
-        "value":"leave"
-    },
-    {
-        "name":"{keyword}_leave_error_unsupported_message",
-        "value":"(N) {nickname} (ID {subscriberId}), you must provide the group ID you want me to leave"
-    },
-    {
-        "name":"{keyword}_leave_message",
-        "value":"(Y) {nickname} (ID {subscriberId}), I will now leave this group"
-    },
-    {
-        "name":"{keyword}_leave_error_invalid_group_id_message",
-        "value":"(N) {nickname} (ID {subscriberId}), '{arg}' is not a valid group ID"
-    },
-    {
-        "name":"{keyword}_leave_success_message",
-        "value":"(Y) {nickname} (ID {subscriberId}), I have left the requested group"
-    },
-    {
-        "name":"{keyword}_leave_failed_message",
-        "value":"(N) {nickname} (ID {subscriberId}), I was unable to leave the requested group\nReason: {reason}"
-    }
-
 ]

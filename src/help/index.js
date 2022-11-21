@@ -1,6 +1,9 @@
+
 /**
- * Required for intellisense to work with api & command
- * @param {import('wolf.js').WOLFBot} api
- * @param {import('wolf.js').CommandObject} command
+ *
+ * @param {import('wolf.js').WOLF} client
+ * @param {import('wolf.js').CommandContext} command
  */
-module.exports = async (api, command, type) => await api.messaging().sendMessage(command, api.phrase().getByLanguageAndName(command.language, `${api.options.keyword}_help_${type}_message`));
+export default async function (client, command, type) {
+  return await client.messaging.sendMessage(command, client.phrase.getByLanguageAndName(command.language, `${client.config.keyword}_help${type ? `_${type}` : ''}_message`));
+}

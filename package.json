@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "{BotName} Bot",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js"
@@ -10,15 +11,14 @@
   "author": "{developer}",
   "license": "ISC",
   "dependencies": {
-    "config": "^3.3.7",
-    "wolf.js": "^1.6.1",
-    "node-pre-gyp": "0.17.0"
+    "wolf.js": "file:../../frameworks/wolf.js"
   },
   "devDependencies": {
-    "eslint": "^7.32.0",
-    "eslint-config-standard": "^16.0.3",
-    "eslint-plugin-import": "^2.24.2",
+    "@types/node": "^18.11.9",
+    "eslint": "^8.25.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^5.1.0"
+    "eslint-plugin-promise": "^6.1.1"
   }
 }
