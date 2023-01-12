@@ -11,8 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "config": "^3.3.7",
-    "wolf.js": "^1.6.1",
-    "node-pre-gyp": "0.17.0"
+    "node-pre-gyp": "0.17.0",
+    "wolf.js": "^1.7.6"
   },
   "devDependencies": {
     "eslint": "^7.32.0",
