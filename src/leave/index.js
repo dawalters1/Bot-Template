@@ -6,7 +6,7 @@ import { Privilege } from 'wolf.js/src/constants/index.js';
  * @param {import('wolf.js').WOLF} client
  * @param {import('wolf.js').CommandContext} command
  */
-export default async function (client, command) {
+export default async (client, command) => {
   // Check to see if the user is authorized, staff or the bot developer
   if (client.config.framework?.developer !== command.sourceSubscriberId && !await client.utility.subscriber.privilege.has(command.sourceSubscriberId, Privilege.STAFF) && !await client.authorization.isAuthorized(command.sourceSubscriberId)) {
     return await client.messaging.sendMessage(

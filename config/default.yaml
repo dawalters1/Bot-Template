@@ -1,6 +1,6 @@
-keyword: keyword
+keyword: keyword #single word here
 framework:
-  developer: 80280172
+  developer: #your id here
   language: en
   login:
     email:

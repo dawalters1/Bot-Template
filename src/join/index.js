@@ -6,7 +6,7 @@ import help from '../help/index.js';
  * @param {import('wolf.js').WOLF} client
  * @param {import('wolf.js').CommandContext} command
  */
-export default async function (client, command) {
+export default async (client, command) => {
   const joinConfig = client.config.get('join');
 
   if (!joinConfig.enabled) {

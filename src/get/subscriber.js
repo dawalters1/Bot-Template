@@ -6,7 +6,7 @@ import { IconSize, Language } from 'wolf.js/src/constants/index.js';
  * @param {import('wolf.js').WOLF} client
  * @param {import('wolf.js').CommandContext} command
  */
-export default async function (client, command) {
+export default async (client, command) => {
   const userInput = command.argument.split(client.SPLIT_REGEX).filter(Boolean)[0];
 
   const subscriber = await client.subscriber.getById(userInput && Validator.isValidNumber(userInput) && parseInt(userInput) > 0 ? parseInt(userInput) : command.sourceSubscriberId);
