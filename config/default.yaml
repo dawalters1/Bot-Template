@@ -23,6 +23,9 @@ framework:
         enabled: true # subscribe to private messages (server)
         tipping: false  # subscribe to private message tip events  (server) - NOT IMPLEMENTED
 
+game:
+  timeout: 10000
+
 join:
   enabled: true
   validation:
@@ -30,3 +33,7 @@ join:
       min: 500
       max: 2500
     ownerIdBlacklist: []
+
+redis:
+  host: localhost
+  port: 6379
