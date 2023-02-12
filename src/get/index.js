@@ -2,13 +2,13 @@ import group from './group.js';
 import subscriber from './subscriber.js';
 
 const exports = {
-  group,
-  subscriber
+    group,
+    subscriber
 };
 
 export {
-  group,
-  subscriber,
+    group,
+    subscriber,
 
-  exports as default
+    exports as default
 };
