@@ -11,13 +11,13 @@
   "author": "{developer}",
   "license": "ISC",
   "dependencies": {
-    "wolf.js": "file:../../frameworks/wolf.js"
+    "wolf.js": "2.0.0-rc21"
   },
   "devDependencies": {
-    "@types/node": "^18.11.9",
-    "eslint": "^8.25.0",
+    "@types/node": "^18.13.0",
+    "eslint": "^8.34.0",
     "eslint-config-standard": "^17.0.0",
-    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^6.1.1"
   }
