@@ -5,8 +5,6 @@ import get from './src/get/index.js'
 import help from './src/help/index.js';
 import game from './src/game/index.js';
 import gameTimeout from './src/timeouts/gameTimeout.js';
-import join from './src/join/index.js';
-import leave from './src/leave/index.js';
 
 const client = new WOLF();
 const cache = new Cache();
@@ -26,8 +24,8 @@ client.commandHandler.register(
             new Command(`${keyword}_command_subscriber`, { group: command => get.subscriber(client, command) })
           ]
         ),
-        new Command(`${keyword}_command_join`, { both: command => join(client, command) }),
-        new Command(`${keyword}_command_leave`, { both: command => leave(client, command) })
+        new Command(`${keyword}_command_join`, { both: client.utility.join }),
+        new Command(`${keyword}_command_leave`, { both: client.utility.leave })
       ]
     ),
 

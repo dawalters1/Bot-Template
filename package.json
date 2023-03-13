@@ -11,7 +11,7 @@
   "author": "{developer}",
   "license": "ISC",
   "dependencies": {
-    "wolf.js": "2.0.0-rc22",
+    "wolf.js": "2.0.0-rc33",
     "ioredis": "5.3.0",
     "redis-lock": "0.1.4"
   },

@@ -6,6 +6,13 @@ framework:
     email:
     password:
     onlineState: 1
+
+  join:
+    limit: 15 # the amount of groups the bot is allowed in
+    lock: 0 # 0 - everyone, 1 - group owner, 2 - authorized, 3 - devleoper
+    members:
+      min: 0
+      max: .inf
   command:
     ignore:
       official: true # whether or not an official bot will trigger a command (internal)
@@ -27,12 +34,8 @@ game:
   timeout: 10000
 
 join:
-  enabled: true
-  validation:
-    members:
-      min: 500
-      max: 2500
-    ownerIdBlacklist: []
+  limit: 15 # 15 groups
+  lock: 3 # only the developer ID specified above can use the join command
 
 redis:
   host: localhost
