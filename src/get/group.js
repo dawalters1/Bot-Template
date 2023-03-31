@@ -12,7 +12,8 @@ export default async (client, command) => {
 
     if (!group.exists) {
         return await command.reply(
-            client.utility.string.replace(client.phrase.getByLanguageAndName(command.language, `${client.config.keyword}_group_profile_error_doesnt_exist_message`),
+            client.utility.string.replace(
+                client.phrase.getByLanguageAndName(command.language, `${client.config.keyword}_group_profile_error_doesnt_exist_message`),
                 {
                     nickname: (await client.subscriber.getById(command.sourceSubscriberId)).nickname,
                     subscriberId: command.sourceSubscriberId,
@@ -27,7 +28,8 @@ export default async (client, command) => {
         .catch(async () => await command.reply(client.phrase.getByLanguageAndName(command.language, `${client.config.keyword}_group_no_avatar_message`)));
 
     return await command.reply(
-        client.utility.string.replace(client.phrase.getByLanguageAndName(command.language, `${client.config.keyword}_group_profile_message`),
+        client.utility.string.replace(
+            client.phrase.getByLanguageAndName(command.language, `${client.config.keyword}_group_profile_message`),
             {
                 id: group.id,
                 name: group.name,

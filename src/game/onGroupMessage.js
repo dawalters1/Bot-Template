@@ -18,7 +18,8 @@ export default async (client, message, game, timestamp, cache) => {
     const timeTaken = timestamp - game.startAt;
 
     return message.reply(
-        client.utility.string.replace(client.phrase.getByLanguageAndName(game.language, `${client.config.keyword}_game_won_message`),
+        client.utility.string.replace(
+            client.phrase.getByLanguageAndName(game.language, `${client.config.keyword}_game_won_message`),
             {
                 nickname: (await message.subscriber()).nickname,
                 subscriberId: message.sourceSubscriberId,

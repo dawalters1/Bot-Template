@@ -13,7 +13,8 @@ export default async (client, command) => {
 
     if (!subscriber.exists) {
         return await command.reply(
-            client.utility.string.replace(client.phrase.getByLanguageAndName(command.language, `${client.config.keyword}_subscriber_profile_error_doesnt_exist_message`),
+            client.utility.string.replace(
+                client.phrase.getByLanguageAndName(command.language, `${client.config.keyword}_subscriber_profile_error_doesnt_exist_message`),
                 {
                     nickname: (await client.subscriber.getById(command.sourceSubscriberId)).nickname,
                     subscriberId: command.sourceSubscriberId,
@@ -28,16 +29,19 @@ export default async (client, command) => {
         .catch(async () => await command.reply(client.phrase.getByLanguageAndName(command.language, `${client.config.keyword}_subscriber_no_avatar_message`)));
 
     return await command.reply(
-        client.utility.string.replace(client.phrase.getByLanguageAndName(command.language, `${client.config.keyword}_subscriber_profile_message`),
+        client.utility.string.replace(
+            client.phrase.getByLanguageAndName(command.language, `${client.config.keyword}_subscriber_profile_message`),
             {
                 id: subscriber.id,
                 nickname: subscriber.nickname,
                 charm: subscriber.charms.selectedList?.length > 0
-                    ? client.utility.string.replace(client.phrase.getByLanguageAndName(command.language, `${client.config.keyword}_charm_selected_message`),
+                    ? client.utility.string.replace(
+                        client.phrase.getByLanguageAndName(command.language, `${client.config.keyword}_charm_selected_message`),
                         {
                             name: (await client.charm.getById(subscriber.charms.selectedList[0].charmId, Language.ENGLISH)).name,
                             id: subscriber.charms.selectedList[0].charmId
-                        })
+                        }
+                    )
                     : client.phrase.getByLanguageAndName(command.language, `${client.config.keyword}_none`),
                 status: subscriber.status,
                 level: subscriber.reputation.toString().split('.')[0],

@@ -12,7 +12,8 @@ export default async (client, command, cache) => {
 
         if (cached) {
             return await command.reply(
-                client.utility.string.replace(client.phrase.getByLanguageAndName(command.language, `${client.config.keyword}_game_start_error_in_progress_message`),
+                client.utility.string.replace(
+                    client.phrase.getByLanguageAndName(command.language, `${client.config.keyword}_game_start_error_in_progress_message`),
                     {
                         word: cached.word
                     }
@@ -43,7 +44,8 @@ export default async (client, command, cache) => {
         )
 
         return await command.reply(
-            client.utility.string.replace(client.phrase.getByLanguageAndName(command.language, `${client.config.keyword}_game_start_message`),
+            client.utility.string.replace(
+                client.phrase.getByLanguageAndName(command.language, `${client.config.keyword}_game_start_message`),
                 {
                     duration: client.utility.toReadableTime(command.language, client.config.get('game.timeout')),
                     word: game.word

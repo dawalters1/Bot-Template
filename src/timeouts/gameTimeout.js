@@ -14,7 +14,8 @@ export default async (client, data, cache) => {
 
         return await client.messaging.sendGroupMessage(
             data.targetGroupId,
-            client.utility.string.replace(client.phrase.getByLanguageAndName(cached.language, `${client.config.keyword}_game_timeout_message`),
+            client.utility.string.replace(
+                client.phrase.getByLanguageAndName(cached.language, `${client.config.keyword}_game_timeout_message`),
                 {
                     word: cached.answer
                 }
