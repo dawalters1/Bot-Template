@@ -16,7 +16,7 @@ export default async (client, command) => {
             client.utility.string.replace(
                 client.phrase.getByLanguageAndName(command.language, `${client.config.keyword}_subscriber_profile_error_doesnt_exist_message`),
                 {
-                    nickname: (await client.subscriber.getById(command.sourceSubscriberId)).nickname,
+                    nickname: (await command.subscriber()).nickname,
                     subscriberId: command.sourceSubscriberId,
                     id: subscriber.id
                 }

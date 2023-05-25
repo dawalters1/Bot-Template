@@ -84,7 +84,7 @@ client.on('privateMessage', async (message) => {
     return Promise.resolve();
   }
 
-  message.language = (await client.subscriber.getById(message.sourceSubscriberId)).language;
+  message.language = (await message.subscriber()).language;
 
   return await help(client, message);
 });

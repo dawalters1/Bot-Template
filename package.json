@@ -11,13 +11,13 @@
   "author": "{developer}",
   "license": "ISC",
   "dependencies": {
-    "wolf.js": "2.0.0",
-    "ioredis": "5.3.0",
+    "wolf.js": "2.0.2",
+    "ioredis": "5.3.2",
     "redis-lock": "0.1.4"
   },
   "devDependencies": {
     "@types/node": "^18.13.0",
-    "eslint": "^8.34.0",
+    "eslint": "^8.41.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-node": "^11.1.0",
