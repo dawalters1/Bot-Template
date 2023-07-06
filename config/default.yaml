@@ -1,23 +1,41 @@
-keyword: keyword # SINGLE word only. EX: tag, battlestars, manager, dua, notes
-app:
-  defaultLanguage: en
-  developerId: developer_id # Your ID should go here
-  commandSettings:
-    ignoreOfficialBots: true
-    ignoreUnofficialBots: false
-  messageSettings:
-    subscriptions: # Optional, All TRUE by Default
-      groupTipping: false # Prevent the bot from receiving group tip events
-      groupMessages: true # Prevent the bot from receiving group message events
-      privateMessages: true # Prevent the bot from receiving private message events    
+keyword: keyword #single word here
+framework:
+  developer: #your id here
+  language: en
+  login:
+    email:
+    password:
+    onlineState: 1
+
+  join:
+    limit: 15 # the amount of groups the bot is allowed in
+    lock: 0 # 0 - everyone, 1 - group owner, 2 - authorized, 3 - devleoper
+    members:
+      min: 0
+      max: .inf
+  command:
+    ignore:
+      official: true # whether or not an official bot will trigger a command (internal)
+      unofficial: true # whether or not an unofficial bot will trigger a command (internal)
+      self: true  # whether or not the bot will process its own messages and trigger its own commands (internal)
+  message:
+    ignore:
+      self: true # whether or not the bot will process its own messages (internal)
+  subscriptions:
+    messages:
+      group:
+        enabled: true #subscribe to group messages  (server)
+        tipping: true # subscribe to group message tip events  (server)
+      private:
+        enabled: true # subscribe to private messages (server)
+        tipping: false  # subscribe to private message tip events  (server) - NOT IMPLEMENTED
+
+game:
+  timeout: 10000
 
 join:
-  enabled: true
-  validation:
-    members: 
-      min: 500   
-      max: 2500
-    ownerIdBlacklist: []
+  limit: 15 # 15 groups
+  lock: 3 # only the developer ID specified above can use the join command
 
 redis:
   host: localhost
