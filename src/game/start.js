@@ -5,10 +5,10 @@
  */
 export default async (client, command, cache) => {
 
-    const unlock = await cache.lock(command.targetGroupId);
+    const unlock = await cache.lock(command.targetChannelId);
 
     try {
-        const cached = await cache.getGame(command.targetGroupId);
+        const cached = await cache.getGame(command.targetChannelId);
 
         if (cached) {
             return await command.reply(
@@ -31,12 +31,12 @@ export default async (client, command, cache) => {
 
         await Promise.all(
             [
-                cache.setGame(command.targetGroupId, game),
+                cache.setGame(command.targetChannelId, game),
                 client.utility.timer.add(
-                    `gameTimeout:${command.targetGroupId}`,
+                    `gameTimeout:${command.targetChannelId}`,
                     'gameTimeout',
                     {
-                        targetGroupId: command.targetGroupId
+                        targetChannelId: command.targetChannelId
                     },
                     client.config.get('game.timeout')
                 )
@@ -54,7 +54,7 @@ export default async (client, command, cache) => {
         )
 
     } catch (error) {
-        return client.log.error(`error starting game [targetGroupId:${command.targetGroupId}, error:${JSON.stringify(error)}]`)
+        return client.log.error(`error starting game [targetChannelId:${command.targetChannelId}, error:${JSON.stringify(error)}]`)
     } finally {
         unlock();
     }

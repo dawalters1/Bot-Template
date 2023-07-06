@@ -1,13 +1,13 @@
-import group from './group.js';
+import channel from './channel.js';
 import subscriber from './subscriber.js';
 
 const exports = {
-    group,
+    channel,
     subscriber
 };
 
 export {
-    group,
+    channel,
     subscriber,
 
     exports as default

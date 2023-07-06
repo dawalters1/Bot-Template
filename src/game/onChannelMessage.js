@@ -10,8 +10,8 @@ export default async (client, message, game, timestamp, cache) => {
 
     await Promise.all(
         [
-            cache.deleteGame(message.targetGroupId),
-            client.utility.timer.cancel(`gameTimeout:${message.targetGroupId}`)
+            cache.deleteGame(message.targetChannelId),
+            client.utility.timer.cancel(`gameTimeout:${message.targetChannelId}`)
         ]
     )
 

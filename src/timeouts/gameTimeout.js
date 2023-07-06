@@ -1,19 +1,19 @@
 
 export default async (client, data, cache) => {
 
-    const unlock = await cache.lock(data.targetGroupId);
+    const unlock = await cache.lock(data.targetChannelId);
 
     try {
-        const cached = await cache.getGame(data.targetGroupId);
+        const cached = await cache.getGame(data.targetChannelId);
 
         if (!cached) {
             return Promise.resolve();
         }
 
-        await cache.deleteGame(data.targetGroupId);
+        await cache.deleteGame(data.targetChannelId);
 
         return await client.messaging.sendGroupMessage(
-            data.targetGroupId,
+            data.targetChannelId,
             client.utility.string.replace(
                 client.phrase.getByLanguageAndName(cached.language, `${client.config.keyword}_game_timeout_message`),
                 {

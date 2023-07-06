@@ -206,5 +206,17 @@
     {
         "name": "{keyword}_game_timeout_message",
         "value": "(N) The group failed to send \"{word}\" in time"
+    },
+    {
+        "name": "{keyword}_channel_verification_tier_none",
+        "value": "None"
+    },
+    {
+        "name": "{keyword}_channel_verification_tier_premium",
+        "value": "Premium"
+    },
+    {
+        "name": "{keyword}_channel_verification_tier_verified",
+        "value": "Verified"
     }
 ]
