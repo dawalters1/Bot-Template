@@ -17,11 +17,11 @@ client.commandHandler.register(
     new Command(`${keyword}_command_${keyword}`, { both: command => help(client, command) },
       [
         new Command(`${keyword}_command_help`, { both: command => help(client, command) }),
-        new Command(`${keyword}_command_start`, { group: command => game.start(client, command, cache) }),
-        new Command(`${keyword}_command_get`, { group: command => help(client, command) },
+        new Command(`${keyword}_command_start`, { channel: command => game.start(client, command, cache) }),
+        new Command(`${keyword}_command_get`, { channel: command => help(client, command) },
           [
-            new Command(`${keyword}_command_group`, { group: command => get.group(client, command) }),
-            new Command(`${keyword}_command_subscriber`, { group: command => get.subscriber(client, command) })
+            new Command(`${keyword}_command_group`, { channel: command => get.channel(client, command) }),
+            new Command(`${keyword}_command_subscriber`, { channel: command => get.subscriber(client, command) })
           ]
         ),
         new Command(`${keyword}_command_join`, { both: client.utility.join }),
@@ -56,23 +56,19 @@ client.on('ready', () => {
   console.log('Ready')
 });
 
-client.on('groupMessage', async message => {
-  if (message.isCommand) {
-    return Promise.resolve();
-  }
+client.on('channelMessage', async message => {
+  if (message.isCommand) { return false; }
 
   const timestamp = Date.now();
 
-  const unlock = await cache.lock(message.targetGroupId);
+  const unlock = await cache.lock(message.targetChannelId);
   try {
 
-    const cached = await cache.getGame(message.targetGroupId);
+    const cached = await cache.getGame(message.targetChannelId);
 
-    if (!cached) {
-      return Promise.resolve();
-    }
+    if (!cached) { return false; }
 
-    return await game.onGroupMessage(client, message, cached, timestamp, cache)
+    return await game.onChannelMessage(client, message, cached, timestamp, cache)
   }
   finally {
     unlock();
@@ -80,9 +76,7 @@ client.on('groupMessage', async message => {
 })
 
 client.on('privateMessage', async (message) => {
-  if (message.isCommand) {
-    return Promise.resolve();
-  }
+  if (message.isCommand) { return false; }
 
   message.language = (await message.subscriber()).language;
 

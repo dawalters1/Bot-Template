@@ -1,14 +1,14 @@
 import start from './start.js';
-import onGroupMessage from './onGroupMessage.js';
+import onChannelMessage from './onChannelMessage.js';
 
 const exports = {
     start,
-    onGroupMessage
+    onChannelMessage
 };
 
 export {
     start,
-    onGroupMessage,
+    onChannelMessage,
 
     exports as default
 }

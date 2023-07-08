@@ -28,6 +28,9 @@ export default async (client, command) => {
         .then(async (buffer) => await command.reply(buffer))
         .catch(async () => await command.reply(client.phrase.getByLanguageAndName(command.language, `${client.config.keyword}_subscriber_no_avatar_message`)));
 
+    const reputation = channel.reputation.toString().split('.');
+    reputation[1] = (reputation[1] ?? '').padEnd(4, '0');
+
     return await command.reply(
         client.utility.string.replace(
             client.phrase.getByLanguageAndName(command.language, `${client.config.keyword}_subscriber_profile_message`),
@@ -44,8 +47,8 @@ export default async (client, command) => {
                     )
                     : client.phrase.getByLanguageAndName(command.language, `${client.config.keyword}_none`),
                 status: subscriber.status,
-                level: subscriber.reputation.toString().split('.')[0],
-                percentage: subscriber.reputation.toString().split('.')[1].slice(0, 2) + '.' + subscriber.reputation.toString().split('.')[1].slice(0, 2),
+                level: reputation[0],
+                percentage: `${reputation[1].slice(0, 2)}.${reputation[1].slice(2)}`,
                 onlineState: client.phrase.getByLanguageAndName(command.language, `${client.config.keyword}_onlineState_${subscriber.onlineState}`),
                 deviceType: client.phrase.getByLanguageAndName(command.language, `${client.config.keyword}_deviceType_${subscriber.deviceType}`),
                 gender: client.phrase.getByLanguageAndName(command.language, `${client.config.keyword}_gender_${subscriber.extended.gender}`),
