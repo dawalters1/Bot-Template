@@ -8,7 +8,7 @@ import { Validator, IconSize } from 'wolf.js';
 export default async (client, command) => {
     const userInput = command.argument.split(client.SPLIT_REGEX).filter(Boolean)[0];
 
-    const channel = await client.channel.getById(userInput && Validator.isValidNumber(userInput) && parseInt(userInput) > 0 ? parseInt(userInput) : command.targetChannelId);
+    const channel = await client.channegil.getById(userInput && Validator.isValidNumber(userInput) && parseInt(userInput) > 0 ? parseInt(userInput) : command.targetChannelId);
 
     if (!channel.exists) {
         return await command.reply(
