@@ -1,14 +1,12 @@
 
 export default async (client, data, cache) => {
 
-    const unlock = await cache.lock(data.targetChannelId);
+    const unlock = await cache.lock(`game:${data.targetChannelId}`);
 
     try {
         const cached = await cache.getGame(data.targetChannelId);
 
-        if (!cached) {
-            return Promise.resolve();
-        }
+        if (!cached) { return false; }
 
         await cache.deleteGame(data.targetChannelId);
 
@@ -17,7 +15,7 @@ export default async (client, data, cache) => {
             client.utility.string.replace(
                 client.phrase.getByLanguageAndName(cached.language, `${client.config.keyword}_game_timeout_message`),
                 {
-                    word: cached.answer
+                    word: cached.word
                 }
             )
         )
