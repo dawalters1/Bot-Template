@@ -1,4 +1,5 @@
 import { WOLF, Command } from 'wolf.js';
+import TemplateSDK from './src/TemplateSDK/TemplateSDK.js';
 
 import Cache from './src/cache/index.js';
 import get from './src/get/index.js'
@@ -8,16 +9,16 @@ import gameTimeout from './src/timeouts/gameTimeout.js';
 
 const client = new WOLF();
 const cache = new Cache();
+const templateSDK = new TemplateSDK();
 
 const keyword = client.config.keyword;
 
 client.commandHandler.register(
   [
-    // Base Command 1
     new Command(`${keyword}_command_${keyword}`, { both: command => help(client, command) },
       [
         new Command(`${keyword}_command_help`, { both: command => help(client, command) }),
-        new Command(`${keyword}_command_start`, { channel: command => game.start(client, command, cache) }),
+        new Command(`${keyword}_command_start`, { channel: command => game.start(client, command, templateSDK, cache) }),
         new Command(`${keyword}_command_get`, { channel: command => help(client, command) },
           [
             new Command(`${keyword}_command_group`, { channel: command => get.channel(client, command) }),
@@ -29,19 +30,7 @@ client.commandHandler.register(
       ]
     ),
 
-    // Base Command 2 - Example !blackjack
-    new Command(`${keyword}_command_example2`, { both: command => help(client, command, 'example2') },
-      [
-        // Add blackjack commands here
-      ]
-    ),
-
-    // Base Command 3 - Example !roulette
-    new Command(`${keyword}_command_example3`, { both: command => help(client, command, 'example3') },
-      [
-        // Add roulette commands here
-      ]
-    )
+    // You can add additional command to this array for different base commands
   ]
 );
 
@@ -66,7 +55,7 @@ client.on('channelMessage', async message => {
 
     const cached = await cache.getGame(message.targetChannelId);
 
-    if (!cached) { return false; }
+    if (!cached || cached.startedAt < Date.now()) { return false; }
 
     return await game.onChannelMessage(client, message, cached, timestamp, cache)
   }

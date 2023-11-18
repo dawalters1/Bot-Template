@@ -8,7 +8,7 @@ import { Validator, IconSize } from 'wolf.js';
 export default async (client, command) => {
     const userInput = command.argument.split(client.SPLIT_REGEX).filter(Boolean)[0];
 
-    const channel = await client.channegil.getById(userInput && Validator.isValidNumber(userInput) && parseInt(userInput) > 0 ? parseInt(userInput) : command.targetChannelId);
+    const channel = await client.channel.getById(userInput && Validator.isValidNumber(userInput) && parseInt(userInput) > 0 ? parseInt(userInput) : command.targetChannelId);
 
     if (!channel.exists) {
         return await command.reply(
@@ -23,12 +23,11 @@ export default async (client, command) => {
         );
     }
 
-    await client.utility.channel.avatar(channel.id, IconSize.SMALL)
-        .then(async (buffer) => await command.reply(buffer))
-        .catch(async () => await command.reply(client.phrase.getByLanguageAndName(command.language, `${client.config.keyword}_channel_no_avatar_message`)));
-
-    const reputation = channel.reputation.toString().split('.');
-    reputation[1] = (reputation[1] ?? '').padEnd(4, '0');
+    await command.reply(
+        await client.utility.channel.avatar(channel.id, IconSize.SMALL)
+            .then(async (buffer) => buffer)
+            .catch(async () => client.phrase.getByLanguageAndName(command.language, `${client.config.keyword}_channel_no_avatar_message`))
+    );
 
     return await command.reply(
         client.utility.string.replace(
@@ -37,10 +36,10 @@ export default async (client, command) => {
                 id: channel.id,
                 name: channel.name,
                 description: channel.description,
-                level: reputation[0],
-                percentage: `${reputation[1].slice(0, 2)}.${reputation[1].slice(2)}`,
+                level: channel.reputation.toString().split('.')[0],
+                percentage: `${channel.percentage}%`,
                 members: client.utility.number.addCommas(channel.membersCount),
-                ownerNickname: (await client.subscriber.getById(channel.owner.id)).nickname,
+                ownerNickname: (await channel.owner.subscriber()).nickname,
                 ownerSubscriberId: channel.owner.id,
                 language: channel.extended.language,
                 verificationTier: client.phrase.getByLanguageAndName(command.language, `${client.config.keyword}_channel_verification_tier_${channel.verificationTier}`)

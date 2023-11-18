@@ -24,12 +24,11 @@ export default async (client, command) => {
         );
     }
 
-    await client.utility.subscriber.avatar(subscriber.id, IconSize.SMALL)
-        .then(async (buffer) => await command.reply(buffer))
-        .catch(async () => await command.reply(client.phrase.getByLanguageAndName(command.language, `${client.config.keyword}_subscriber_no_avatar_message`)));
-
-    const reputation = channel.reputation.toString().split('.');
-    reputation[1] = (reputation[1] ?? '').padEnd(4, '0');
+    await command.reply(
+        await client.utility.subscriber.avatar(subscriber.id, IconSize.SMALL)
+            .then(async (buffer) => buffer)
+            .catch(async () => client.phrase.getByLanguageAndName(command.language, `${client.config.keyword}_subscriber_no_avatar_message`))
+    );
 
     return await command.reply(
         client.utility.string.replace(
@@ -41,14 +40,14 @@ export default async (client, command) => {
                     ? client.utility.string.replace(
                         client.phrase.getByLanguageAndName(command.language, `${client.config.keyword}_charm_selected_message`),
                         {
-                            name: (await client.charm.getById(subscriber.charms.selectedList[0].charmId, Language.ENGLISH)).name,
+                            name: (await subscriber.charms.selectedList[0].charm()).name,
                             id: subscriber.charms.selectedList[0].charmId
                         }
                     )
                     : client.phrase.getByLanguageAndName(command.language, `${client.config.keyword}_none`),
                 status: subscriber.status,
-                level: reputation[0],
-                percentage: `${reputation[1].slice(0, 2)}.${reputation[1].slice(2)}`,
+                level: subscriber.reputation.toString().split('.')[0],
+                percentage: `${subscriber.percentage}%`,
                 onlineState: client.phrase.getByLanguageAndName(command.language, `${client.config.keyword}_onlineState_${subscriber.onlineState}`),
                 deviceType: client.phrase.getByLanguageAndName(command.language, `${client.config.keyword}_deviceType_${subscriber.deviceType}`),
                 gender: client.phrase.getByLanguageAndName(command.language, `${client.config.keyword}_gender_${subscriber.extended.gender}`),
