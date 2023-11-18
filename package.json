@@ -16,7 +16,7 @@
     "wolf.js": "^2.3.7"
   },
   "devDependencies": {
-    "@types/node": "^20.8.2",
+    "@types/node": "^20.9.1",
     "eslint": "^8.50.0",
     "eslint-config-standard": "^17.1.0",
     "eslint-plugin-import": "^2.29.0",
