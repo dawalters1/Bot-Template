@@ -111,8 +111,8 @@ class Cache {
         return JSON.parse(await this._get(`${GAME_PREFIX}${id}`));
     }
 
-    async setGame(id, value) {
-        return await this._set(`${GAME_PREFIX}${id}`, JSON.stringify(value));
+    async setGame(id, value, ttl) {
+        return await this._set(`${GAME_PREFIX}${id}`, JSON.stringify(value), ttl);
     }
 
     async deleteGame(id) {

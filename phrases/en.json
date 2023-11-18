@@ -193,11 +193,15 @@
     },
     {
         "name": "{keyword}_game_start_error_in_progress_message",
-        "value": "(N) There is already a game in progress\n\nAdd spaces between each letter of \"{word}\" to win"
+        "value": "(N) There is already a game in progress\n\nRemove the spaces from the following  \"{word}\" to win"
     },
     {
-        "name": "{keyword}_game_start_message",
-        "value": "You have {duration} to add spaces between each letter of \"{word}\""
+        "name": "{keyword}_start_error_no_game_available_message",
+        "value": "(N) No games located, Please try again!"
+    },
+    {
+        "name": "{keyword}_game_message",
+        "value": "Fastest Fingers Win!\nRemove the spaces from the following \"{word}\""
     },
     {
         "name": "{keyword}_game_won_message",
