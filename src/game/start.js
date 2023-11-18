@@ -77,7 +77,7 @@ const handleCommand = async (client, command, templateSDK, cache) => {
         return await startGame(client, command, templateSDK, cache);
 
     } catch (error) {
-        return client.log.error(`error starting game [targetChannelId:${command.targetChannelId}, error:${JSON.stringify(error)}]`)
+        return client.log.error(`error starting game [targetChannelId:${command.targetChannelId}][error:${JSON.stringify(error)}]`)
     } finally {
         unlock();
     }

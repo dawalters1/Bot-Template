@@ -51,6 +51,7 @@ class GameHelper {
         const cached = await this._dataSources.cache.getGameIdList();
 
         if (cached !== null) {
+
             return cached;
         }
 
@@ -60,7 +61,7 @@ class GameHelper {
 
         const gameIds = rows.length ? rows.map((row) => row.id) : []
 
-        await this._dataSources.cache.setGameById(gameIds);
+        await this._dataSources.cache.setGameIdList(gameIds);
 
         return gameIds;
     }
@@ -80,6 +81,7 @@ class GameHelper {
         const cached = await this._dataSources.cache.getGameIdListByLanguage(language);
 
         if (cached !== null) {
+
             return cached;
         }
 
@@ -92,7 +94,7 @@ class GameHelper {
 
         const gameIds = rows.length ? rows.map((row) => row.id) : []
 
-        await this._dataSources.cache.setGameByIdByLanguage(language, gameIds);
+        await this._dataSources.cache.setGameIdListByLanguage(language, gameIds);
 
         return gameIds;
     }
@@ -144,7 +146,7 @@ class GameHelper {
 
         const gamePrior = id !== null ? await this.getById(id) : null;
 
-        const [queryResults] = await this._dataSources.db.query(
+        const [queryResult] = await this._dataSources.db.query(
             GameSql.SAVE,
             [
                 id,
@@ -153,25 +155,27 @@ class GameHelper {
             ]
         )
 
-        if (gamePrior) {
+        await this._dataSources.cache.deleteGameById(id);
+
+        if (gamePrior && gamePrior.language !== language) {
             if (gamePrior.language !== language) {
                 await Promise.all(
                     [
                         this._dataSources.cache.removeFromGameIdListByLanguage(gamePrior.language, gamePrior.id),
-                        this._dataSources.cache.addToGameIdListByLanguage(language, gamePrior.id)
+                        this._dataSources.cache.addToGameIdListByLanguage(language, gamePrior.id),
                     ]
                 )
             }
         } else {
             await Promise.all(
                 [
-                    this._dataSources.cache.addToGameIdListByLanguage(language, queryResults.insertId),
-                    this._dataSources.cache.addToGameIdList(queryResults.insertId),
+                    this._dataSources.cache.addToGameIdListByLanguage(language, queryResult.insertId),
+                    this._dataSources.cache.addToGameIdList(queryResult.insertId),
                 ]
             )
         }
 
-        return queryResults;
+        return queryResult;
     }
 
     /**
@@ -190,7 +194,7 @@ class GameHelper {
 
         const gamePrior = await this.getById(id);
 
-        const [queryResults] = await this._dataSources.db.query(
+        const [queryResult] = await this._dataSources.db.query(
             GameSql.DELETE_BY_ID,
             [
                 id
@@ -205,7 +209,7 @@ class GameHelper {
             ]
         )
 
-        return queryResults;
+        return queryResult;
     }
 }
 
